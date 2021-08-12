@@ -35,6 +35,6 @@ Proced to build ESIM and EMVS by running:
 catkin build esim_ros mapper_emvs
 ```
 
-We generated our data using helper scripts, esim.sh and emvs.py. To use them, input a directory for the subsequent bags to be stored and accessed.
+We generated our data using helper scripts, esim.sh and emvs.sh. To use them, input a directory for the subsequent bags to be stored and accessed.
 
 Student: Huidong Hwang; Haoman Zhong
