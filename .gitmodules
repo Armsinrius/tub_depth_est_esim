@@ -1,0 +1,6 @@
+[submodule "rpg_emvs"]
+	path = rpg_emvs
+	url = git@github.com:hwangh95/rpg_emvs.git
+[submodule "rpg_esim"]
+	path = rpg_esim
+	url = git@github.com:hwangh95/rpg_esim.git
