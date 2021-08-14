@@ -73,8 +73,16 @@ bash emvs.sh ./bags
 ```
 Calculate the trimmed mean of the estimate output 
 ```bash 
-python depthestimate.py -i /bags/5mdepth_0.05baseline.pcd
+python depthestimate.py -i /path/to/pointcloud.pcd
 ```
+# Example and Visualisation
+In the "vis_example" folder, you may find some point cloud we generated ex ante. We ran the experiment on 2 sets of different ground truth depth. One is 5 meters and the other set is in 10m depth. We also take consider into the effective baseline in this case. 
+
+```bash 
+python ~/depth_est_esim/tub_depth_est_esim/vis_example/errorestimation.py
+```
+
+
 
 
 Student: Huidong Hwang; Haoman Zhong
