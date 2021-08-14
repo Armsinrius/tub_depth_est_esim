@@ -58,7 +58,7 @@ out_arr10d035b = np.asarray(pcd10d035b.points)
 out_arr10d040b = np.asarray(pcd10d040b.points)
 out_arr10d045b = np.asarray(pcd10d045b.points)
 out_arr10d050b = np.asarray(pcd10d050b.points)
-#print ("output array from input list : ", out_arr)
+
 
 est_dep5d005b = out_arr5d005b[:,-1]
 est_dep5d010b = out_arr5d010b[:,-1]
@@ -103,8 +103,7 @@ tm10d035b = stats.trim_mean(est_dep10d035b, 0.1)
 tm10d040b = stats.trim_mean(est_dep10d040b, 0.1)
 tm10d045b = stats.trim_mean(est_dep10d045b, 0.1)
 tm10d050b = stats.trim_mean(est_dep10d050b, 0.1)
-print(tm5d005b, tm5d010b, tm5d015b, tm5d020b, tm5d025b, tm5d030b, tm5d035b,tm5d040b, tm5d045b, tm5d050b)
-print(tm10d005b, tm10d010b, tm10d015b, tm10d020b, tm10d025b, tm10d030b, tm10d035b, tm10d040b, tm10d045b, tm10d050b)
+
 
 md5 = [tm5d005b, tm5d010b, tm5d015b, tm5d020b, tm5d025b, tm5d030b, tm5d035b,tm5d040b, tm5d045b, tm5d050b]
 md10 = [tm10d005b, tm10d010b, tm10d015b, tm10d020b, tm10d025b, tm10d030b, tm10d035b, tm10d040b, tm10d045b, tm10d050b]
@@ -262,7 +261,7 @@ theo_error5d035 = 5**2/(0.35*500)
 theo_error5d040 = 5**2/(0.40*500)
 theo_error5d045 = 5**2/(0.45*500)
 theo_error5d050 = 5**2/(0.5*500)
-print(theo_error5d005, theo_error5d010, theo_error5d015, theo_error5d020, theo_error5d025, theo_error5d030, theo_error5d035 , theo_error5d040, theo_error5d045, theo_error5d050)
+
 
 theo_error10d005 = 10**2/(0.05*500)
 theo_error10d010 = 10**2/(0.1*500)
@@ -274,7 +273,7 @@ theo_error10d035 = 10**2/(0.35*500)
 theo_error10d040 = 10**2/(0.40*500)
 theo_error10d045 = 10**2/(0.45*500)
 theo_error10d050 = 10**2/(0.5*500)
-print(theo_error10d005, theo_error10d010, theo_error10d015, theo_error10d020, theo_error10d025, theo_error10d030, theo_error10d035, theo_error10d040, theo_error10d045, theo_error10d050 )
+
 
 #Plotting
 
