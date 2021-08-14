@@ -71,7 +71,10 @@ cd ~/depth_est_esim/tub_depth_est_esim
 mkdir bags && bash esim.sh ./bags
 bash emvs.sh ./bags
 ```
-
+Calculate the trimmed mean of the estimate output 
+```bash 
+python depthestimate.py -i /bags/5mdepth_0.05baseline.pcd
+```
 
 
 Student: Huidong Hwang; Haoman Zhong
