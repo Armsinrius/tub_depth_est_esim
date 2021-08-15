@@ -5,7 +5,7 @@ usage() {
     [-d,depths] \t Space delimited list of camera depths in meters \n \
     [-b,baselines] \t Space delimited list of baselines in meters" 1>&2;
 }
-PARAMS=`getopt -o hdb --long help,depths,baselines \
+PARAMS=`getopt -o hd:b: --long help,depths:,baselines: \
              -n 'esim.sh' -- "$@"`
 if [ $? != 0 ] ; then echo "Invalid options" >&2 ; usage; exit 1 ; fi
 eval set -- "$PARAMS"
@@ -71,6 +71,5 @@ do
         sleep 1
         pgrep -f dvs_renderer | xargs kill
         sleep 1
-        exit
     done
 done

@@ -4,7 +4,7 @@ usage() {
     [-h,--help] \n \
     [-c,--config] \t EMVS config file" 1>&2;
 }
-PARAMS=`getopt -o hc --long help,config \
+PARAMS=`getopt -o hc: --long help,config: \
              -n 'emvs.sh' -- "$@"`
 if [ $? != 0 ] ; then echo "Invalid options" >&2 ; usage; exit 1 ; fi
 eval set -- "$PARAMS"
