@@ -63,16 +63,29 @@ To demostrate we just create a new directory called "bags" under the current fol
 
 ```bash
 cd ~/depth_est_esim/tub_depth_est_esim
-mkdir bags && bash esim.sh ./bags
+mkdir bags 
+```
+Next there is the option listed when calling esim.sh, 
+```bash
+bash esim.sh
+```
+One example for presetting depth (in meter) at 1 meter, and baseline (in centremeter) at 5 cm, would be like: (Note, multi input parameters are also possible via arguments like -d"1 5 10" -b"5 10", which will generate 6 bags based on the input value)
+```bash
+bash esim.sh -d"1" -b"5" ./bags
+```
+Then proceed to generate the pointcloud file from the bag:
+```bash
 bash emvs.sh ./bags
 ```
-Calculate the trimmed mean of the estimate output
-```bash
-python depthestimate.py -i /path/to/pointcloud.pcd
-```
+Note:
 esim.sh accepts parameters for custom ground truth depths and baselines.
 
 emvs.sh accepts a parameter for a custom configuration file.
+
+Last, calculate the trimmed mean of the estimated depth output
+```bash
+python ./depestimate.py -i /path/to/pointcloud.pcd
+```
 <br /> <br />
 # Example and Visualisation
 In the "vis_example" folder, you may find some point cloud we generated ex ante. Of course you can follow the instruction and create point cloud based on other groundtruth depths and baselines. This part solely serve as an illustration.<br />
