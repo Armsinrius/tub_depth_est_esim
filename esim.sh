@@ -3,7 +3,7 @@ usage() {
     echo -e "Usage: $0 [options] BAG_DIR \n \
     [-h,--help] \n \
     [-d,depths] \t Space delimited list of camera depths in meters \n \
-    [-b,baselines] \t Space delimited list of baselines in meters" 1>&2;
+    [-b,baselines] \t Space delimited list of baselines in centimeters" 1>&2;
 }
 PARAMS=`getopt -o hd:b: --long help,depths:,baselines: \
              -n 'esim.sh' -- "$@"`
@@ -17,11 +17,11 @@ while true; do
             exit 0
             ;;
         -d | --depths)
-            depths="$2"
+            depths=$(echo "${2//=}")
             shift 2
             ;;
         -b | --baselines)
-            baselines="$2"
+            baselines=$(echo "${2//=}")
             shift 2
             ;;
         --)
@@ -60,10 +60,10 @@ do
 
     for baseline in ${baselines}
     do
-        sed -i "4s|.*|--path_to_output_bag=${bag_dir}/${depth}mdepth_$(printf '0.%02d' ${baseline})baseline.bag|" ${config}
+        sed -i "4s|.*|--path_to_output_bag=${bag_dir}/${depth}mdepth_$(echo ${baseline} 100| awk '{printf "%.3f", $1 / $2}')baseline.bag|" ${config}
         sed -i "14s|.*|--calib_filename=${script_dir}/camera_config.yaml|" ${config}
         sed -i "17s|.*|--renderer_texture=${script_dir}/rpg_esim/event_camera_simulator/imp/imp_planar_renderer/textures/rocks.jpg|" ${config}
-        sed -i "35s|.*|--trajectory_multiplier_x=$(printf '0.%03d' $(($baseline*5)))|" ${config}
+        sed -i "35s|.*|--trajectory_multiplier_x=$(echo ${baseline} 100| awk '{printf "%.3f", $1 / (2*$2)}')|" ${config}
         roslaunch esim_ros esim.launch config:=${config} &
         sleep 1
         tail --pid=$(pgrep esim_node) -f /dev/null

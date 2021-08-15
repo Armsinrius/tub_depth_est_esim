@@ -16,7 +16,7 @@ while true; do
             exit 0
             ;;
         -c | --config)
-            config="$2"
+            config=$(echo "${2//=}")
             shift 2
             ;;
         --)
