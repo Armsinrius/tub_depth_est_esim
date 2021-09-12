@@ -1,5 +1,5 @@
 # tub_depth_est_esim
-This is a student project at Computer Vision & Remote Sensing laboratory of TU Berlin. The project is aim to illustrate depth estimation with the Open Event Camera Simulator and the Event-based Multi-View Stereo developed by the Robotics and Perception Group in the University of Zurich.
+This is a student project at the Computational Psychology and Robotic Interactive Perception laboratories of TU Berlin. The project is aim to illustrate depth estimation with the Open Event Camera Simulator and the Event-based Multi-View Stereo developed by the Robotics and Perception Group in the University of Zurich.
 
 We modified the software to fix various unresolved bugs and added a sinusoidal spline function in the camera simulator. The sinusoidal function is achieved by taking the sine of Pi multiplied by the time step for the positional and angular values.
 
